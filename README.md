@@ -1,6 +1,6 @@
 # ArtExtract CRNN Submission
 
-![Art](results/Untitled_design-1.svg)
+![Art](results/Untitled_design-1.png)
 
 This repository contains my ArtExtract submission for multi-task artwork classification. The goal is to predict three labels from the same painting:
 
