@@ -1,0 +1,167 @@
+========================================
+Top-25 Artists — DINOv2 + ArcFace (no SAM) — 2 A40 GPU(s)
+Resume: best_top25.pt (epoch 27, MeanF1=0.59, ArcFace warm)
+Effective batch: 128
+Fixes: artist weight 0.50, style focal_gamma=2.5, class_weight_power=0.75
+========================================
+Resuming from: /home/irohs/23b2445/CRNN/checkpoints/best_top25.pt
+Device: cuda:0  |  world_size=2
+Per-GPU batch=16  →  Effective batch=128
+Image size: 336  |  Epochs: 100
+EMA=True (decay=0.9995)  |  SAM=False  |  AMP=bfloat16
+LLRD=True (decay=0.8)  |  No-SGDR-restart=True
+TTA=True (12 views)  |  LogitAdjust τ: artist=0.3 style=0.0 genre=0.0
+Focal γ: artist=1.5  style=2.5  genre=2.0
+Smoothing: artist=0.05  style=0.05  genre=0.02
+Aug prob: 0.2 → 0.05
+Pretrained path: /home/irohs/23b2445/CRNN/weights/dinov2_vitl14.pth (EXISTS ✓)
+
+train label sanity check:
+  artist_label: min=-1, max=24, unique=26, num_classes=25
+  style_label: min=0, max=26, unique=27, num_classes=27
+  genre_label: min=0, max=6, unique=7, num_classes=7
+
+val label sanity check:
+  artist_label: min=-1, max=24, unique=26, num_classes=25
+  style_label: min=0, max=26, unique=27, num_classes=27
+  genre_label: min=0, max=6, unique=7, num_classes=7
+
+[OK] All 7 genre classes present in training data.
+Logit adjustment enabled: {'artist': 0.3}
+Training augmentation: moderate
+[INFO] Loading timm backbone 'dinov2_vitl14' from local file: /home/irohs/23b2445/CRNN/weights/dinov2_vitl14.pth
+[INFO] Loading timm backbone 'dinov2_vitl14' from local file: /home/irohs/23b2445/CRNN/weights/dinov2_vitl14.pth
+[INFO] Timm backbone loaded — missing=0, unexpected=0
+[INFO] Timm backbone loaded — missing=0, unexpected=0
+
+>>> Resuming from: /home/irohs/23b2445/CRNN/checkpoints/best_top25.pt
+    Loaded 'ema_state_dict' from epoch 31
+EMA enabled (decay=0.9995)
+[ArcFace] task=style  in_features=512  num_classes=27  s=32.0  m=0.35
+[ArcFace] task=artist  in_features=512  num_classes=25  s=32.0  m=0.30
+ArcFace active for: ['style', 'artist']  (others use FocalLoss)
+LLRD optimizer: 6 param groups, decay=0.8
+ArcFace params added to optimizer: 26,624 params at lr=5.00e-05
+
+Epoch 32/100
+Train | Loss:3.9198 MeanF1:0.8471 | Artist:F1:0.8549 Acc:0.8721 Top5:0.9725 | Style:F1:0.8407 Acc:0.8258 Top5:0.9700 | Genre:F1:0.8459 Acc:0.8230 Top5:0.9997
+Val   | Loss:0.0062 MeanF1:0.7868 | Artist:F1:0.8581 Acc:0.8730 Top5:0.9762 | Style:F1:0.7111 Acc:0.7177 Top5:0.9377 | Genre:F1:0.7912 Acc:0.7747 Top5:0.9986 | LR:3.93e-05
+  Artist per-class: min=0.694 max=0.978 std=0.092
+    Worst: c6=0.694, c20=0.698, c14=0.707
+  Style per-class: min=0.451 max=0.965 std=0.110
+    Worst: c10=0.451, c16=0.505, c6=0.554
+  Genre per-class: min=0.622 max=0.971 std=0.119
+    Worst: c6=0.622, c3=0.695, c2=0.703
+✓ Saved best → checkpoints/best_top25_a40.pt (MeanF1=0.7868  Artist:0.8581  Style:0.7111  Genre:0.7912)
+
+Epoch 33/100
+Train | Loss:2.2379 MeanF1:0.8825 | Artist:F1:0.9171 Acc:0.9251 Top5:0.9851 | Style:F1:0.8746 Acc:0.8483 Top5:0.9757 | Genre:F1:0.8559 Acc:0.8342 Top5:0.9997
+Val   | Loss:0.0064 MeanF1:0.8007 | Artist:F1:0.8810 Acc:0.8926 Top5:0.9804 | Style:F1:0.7276 Acc:0.7240 Top5:0.9415 | Genre:F1:0.7934 Acc:0.7779 Top5:0.9986 | LR:3.86e-05
+  Artist per-class: min=0.703 max=0.989 std=0.076
+    Worst: c6=0.703, c14=0.769, c20=0.788
+  Style per-class: min=0.468 max=0.971 std=0.100
+    Worst: c10=0.468, c20=0.590, c9=0.592
+  Genre per-class: min=0.621 max=0.973 std=0.121
+    Worst: c6=0.621, c3=0.690, c2=0.699
+✓ Saved best → checkpoints/best_top25_a40.pt (MeanF1=0.8007  Artist:0.8810  Style:0.7276  Genre:0.7934)
+
+Epoch 34/100
+Train | Loss:1.6347 MeanF1:0.9004 | Artist:F1:0.9444 Acc:0.9498 Top5:0.9910 | Style:F1:0.8902 Acc:0.8656 Top5:0.9809 | Genre:F1:0.8666 Acc:0.8454 Top5:0.9998
+Val   | Loss:0.0064 MeanF1:0.8073 | Artist:F1:0.8937 Acc:0.9027 Top5:0.9820 | Style:F1:0.7348 Acc:0.7259 Top5:0.9439 | Genre:F1:0.7934 Acc:0.7783 Top5:0.9988 | LR:3.80e-05
+  Artist per-class: min=0.750 max=0.989 std=0.066
+    Worst: c6=0.750, c14=0.753, c15=0.824
+  Style per-class: min=0.461 max=0.971 std=0.099
+    Worst: c10=0.461, c9=0.592, c20=0.594
+  Genre per-class: min=0.628 max=0.968 std=0.119
+    Worst: c6=0.628, c3=0.689, c2=0.702
+✓ Saved best → checkpoints/best_top25_a40.pt (MeanF1=0.8073  Artist:0.8937  Style:0.7348  Genre:0.7934)
+
+Epoch 35/100
+Train | Loss:1.2439 MeanF1:0.9145 | Artist:F1:0.9637 Acc:0.9664 Top5:0.9938 | Style:F1:0.9080 Acc:0.8832 Top5:0.9835 | Genre:F1:0.8718 Acc:0.8513 Top5:0.9998
+Val   | Loss:0.0064 MeanF1:0.8131 | Artist:F1:0.9059 Acc:0.9131 Top5:0.9833 | Style:F1:0.7368 Acc:0.7305 Top5:0.9438 | Genre:F1:0.7965 Acc:0.7832 Top5:0.9990 | LR:3.73e-05
+  Artist per-class: min=0.811 max=0.989 std=0.051
+    Worst: c14=0.811, c6=0.824, c15=0.843
+  Style per-class: min=0.472 max=0.965 std=0.097
+    Worst: c10=0.472, c9=0.599, c20=0.608
+  Genre per-class: min=0.630 max=0.968 std=0.118
+    Worst: c6=0.630, c3=0.692, c2=0.707
+✓ Saved best → checkpoints/best_top25_a40.pt (MeanF1=0.8131  Artist:0.9059  Style:0.7368  Genre:0.7965)
+
+Epoch 36/100
+Train | Loss:0.9942 MeanF1:0.9265 | Artist:F1:0.9758 Acc:0.9774 Top5:0.9954 | Style:F1:0.9221 Acc:0.8971 Top5:0.9865 | Genre:F1:0.8818 Acc:0.8613 Top5:0.9998
+Val   | Loss:0.0067 MeanF1:0.8141 | Artist:F1:0.9090 Acc:0.9164 Top5:0.9811 | Style:F1:0.7359 Acc:0.7318 Top5:0.9441 | Genre:F1:0.7973 Acc:0.7825 Top5:0.9988 | LR:3.66e-05
+  Artist per-class: min=0.826 max=0.989 std=0.049
+    Worst: c6=0.826, c14=0.832, c12=0.843
+  Style per-class: min=0.466 max=0.964 std=0.100
+    Worst: c10=0.466, c9=0.600, c20=0.619
+  Genre per-class: min=0.640 max=0.964 std=0.115
+    Worst: c6=0.640, c3=0.697, c2=0.705
+✓ Saved best → checkpoints/best_top25_a40.pt (MeanF1=0.8141  Artist:0.9090  Style:0.7359  Genre:0.7973)
+
+Epoch 37/100
+Train | Loss:0.8278 MeanF1:0.9342 | Artist:F1:0.9826 Acc:0.9836 Top5:0.9968 | Style:F1:0.9317 Acc:0.9087 Top5:0.9885 | Genre:F1:0.8884 Acc:0.8686 Top5:0.9999
+Val   | Loss:0.0068 MeanF1:0.8147 | Artist:F1:0.9110 Acc:0.9174 Top5:0.9807 | Style:F1:0.7325 Acc:0.7307 Top5:0.9434 | Genre:F1:0.8006 Acc:0.7871 Top5:0.9988 | LR:3.59e-05
+  Artist per-class: min=0.821 max=0.989 std=0.048
+    Worst: c14=0.821, c6=0.831, c18=0.853
+  Style per-class: min=0.459 max=0.968 std=0.100
+    Worst: c10=0.459, c9=0.594, c20=0.620
+  Genre per-class: min=0.649 max=0.962 std=0.113
+    Worst: c6=0.649, c3=0.695, c2=0.711
+✓ Saved best → checkpoints/best_top25_a40.pt (MeanF1=0.8147  Artist:0.9110  Style:0.7325  Genre:0.8006)
+
+Epoch 38/100
+Train | Loss:0.7047 MeanF1:0.9395 | Artist:F1:0.9863 Acc:0.9870 Top5:0.9985 | Style:F1:0.9396 Acc:0.9200 Top5:0.9905 | Genre:F1:0.8926 Acc:0.8745 Top5:0.9996
+Val   | Loss:0.0070 MeanF1:0.8147 | Artist:F1:0.9119 Acc:0.9197 Top5:0.9814 | Style:F1:0.7333 Acc:0.7322 Top5:0.9434 | Genre:F1:0.7990 Acc:0.7853 Top5:0.9988 | LR:3.51e-05
+  Artist per-class: min=0.830 max=0.983 std=0.047
+    Worst: c6=0.830, c18=0.844, c14=0.845
+  Style per-class: min=0.460 max=0.964 std=0.100
+    Worst: c10=0.460, c9=0.597, c20=0.626
+  Genre per-class: min=0.647 max=0.956 std=0.112
+    Worst: c6=0.647, c3=0.698, c2=0.706
+✓ Saved best → checkpoints/best_top25_a40.pt (MeanF1=0.8147  Artist:0.9119  Style:0.7333  Genre:0.7990)
+
+Epoch 39/100
+Train | Loss:0.6054 MeanF1:0.9440 | Artist:F1:0.9907 Acc:0.9909 Top5:0.9988 | Style:F1:0.9444 Acc:0.9277 Top5:0.9915 | Genre:F1:0.8971 Acc:0.8795 Top5:0.9997
+Val   | Loss:0.0070 MeanF1:0.8154 | Artist:F1:0.9151 Acc:0.9223 Top5:0.9807 | Style:F1:0.7304 Acc:0.7335 Top5:0.9427 | Genre:F1:0.8008 Acc:0.7867 Top5:0.9991 | LR:3.44e-05
+  Artist per-class: min=0.809 max=0.984 std=0.049
+    Worst: c6=0.809, c14=0.838, c18=0.846
+  Style per-class: min=0.454 max=0.962 std=0.101
+    Worst: c10=0.454, c9=0.595, c20=0.619
+  Genre per-class: min=0.647 max=0.956 std=0.111
+    Worst: c6=0.647, c2=0.707, c3=0.709
+✓ Saved best → checkpoints/best_top25_a40.pt (MeanF1=0.8154  Artist:0.9151  Style:0.7304  Genre:0.8008)
+
+Epoch 40/100
+Train | Loss:0.5204 MeanF1:0.9492 | Artist:F1:0.9930 Acc:0.9931 Top5:0.9989 | Style:F1:0.9504 Acc:0.9344 Top5:0.9918 | Genre:F1:0.9043 Acc:0.8855 Top5:0.9997
+Val   | Loss:0.0071 MeanF1:0.8177 | Artist:F1:0.9180 Acc:0.9252 Top5:0.9798 | Style:F1:0.7315 Acc:0.7338 Top5:0.9424 | Genre:F1:0.8036 Acc:0.7902 Top5:0.9990 | LR:3.37e-05
+  Artist per-class: min=0.811 max=0.983 std=0.047
+    Worst: c6=0.811, c18=0.840, c14=0.848
+  Style per-class: min=0.467 max=0.962 std=0.099
+    Worst: c10=0.467, c9=0.594, c16=0.608
+  Genre per-class: min=0.653 max=0.959 std=0.108
+    Worst: c6=0.653, c3=0.712, c2=0.714
+✓ Saved best → checkpoints/best_top25_a40.pt (MeanF1=0.8177  Artist:0.9180  Style:0.7315  Genre:0.8036)
+
+Epoch 41/100
+Train | Loss:0.4689 MeanF1:0.9523 | Artist:F1:0.9942 Acc:0.9944 Top5:0.9993 | Style:F1:0.9564 Acc:0.9417 Top5:0.9929 | Genre:F1:0.9063 Acc:0.8897 Top5:0.9997
+Val   | Loss:0.0071 MeanF1:0.8166 | Artist:F1:0.9176 Acc:0.9252 Top5:0.9804 | Style:F1:0.7305 Acc:0.7345 Top5:0.9409 | Genre:F1:0.8017 Acc:0.7889 Top5:0.9988 | LR:3.29e-05
+  Artist per-class: min=0.814 max=0.979 std=0.046
+    Worst: c6=0.814, c18=0.842, c14=0.848
+  Style per-class: min=0.454 max=0.959 std=0.100
+    Worst: c10=0.454, c9=0.602, c16=0.615
+  Genre per-class: min=0.650 max=0.956 std=0.110
+    Worst: c6=0.650, c3=0.706, c2=0.712
+No improvement 1 epoch(s) (best ep 40, F1=0.8177)
+
+Epoch 42/100
+Train | Loss:0.4021 MeanF1:0.9548 | Artist:F1:0.9959 Acc:0.9962 Top5:0.9998 | Style:F1:0.9590 Acc:0.9475 Top5:0.9935 | Genre:F1:0.9094 Acc:0.8938 Top5:0.9999
+Val   | Loss:0.0072 MeanF1:0.8147 | Artist:F1:0.9136 Acc:0.9203 Top5:0.9804 | Style:F1:0.7285 Acc:0.7333 Top5:0.9415 | Genre:F1:0.8019 Acc:0.7889 Top5:0.9987 | LR:3.21e-05
+  Artist per-class: min=0.803 max=0.984 std=0.046
+    Worst: c6=0.803, c14=0.838, c18=0.851
+  Style per-class: min=0.453 max=0.964 std=0.102
+    Worst: c10=0.453, c16=0.590, c9=0.600
+  Genre per-class: min=0.650 max=0.959 std=0.109
+    Worst: c6=0.650, c3=0.707, c2=0.713
+No improvement 2 epoch(s) (best ep 40, F1=0.8177)
+
+Epoch 43/100

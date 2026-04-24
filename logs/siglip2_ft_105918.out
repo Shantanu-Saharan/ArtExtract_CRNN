@@ -1,0 +1,36 @@
+========================================
+Top-25 SigLIP 2 full fine-tune
+Model dir:        /home/irohs/23b2445/CRNN/weights/siglip2-so400m-patch16-384
+Probe checkpoint: /home/irohs/23b2445/CRNN/checkpoints/linear_probe_top25_siglip2.pt
+Save path:        /home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_ft.pt
+GPUs requested:   2
+========================================
+[INFO] Found existing fine-tune checkpoint, resuming from /home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_ft.pt
+Device: cuda:0 | world_size=2
+Model: /home/irohs/23b2445/CRNN/weights/siglip2-so400m-patch16-384
+Train: 58104  Val: 11579
+Per-GPU batch=4 | accum=8 | effective batch=64
+Epochs=18 | freeze_backbone_epochs=1 | TTA=True (2 views)
+[INFO] Resumed full fine-tune from /home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_ft.pt at epoch 1
+
+Epoch 2/18 | backbone_trainable=True
+Train | Loss:0.0098 MeanF1:0.9215 | Artist:F1:0.9675 Acc:0.9680 Top5:0.9989 | Style:F1:0.8791 Acc:0.8586 Top5:0.9959 | Genre:F1:0.9178 Acc:0.9087 Top5:0.9999
+Val   | Loss:0.0127 MeanF1:0.8303 | Artist:F1:0.9142 Acc:0.9226 Top5:0.9905 | Style:F1:0.7343 Acc:0.7447 Top5:0.9782 | Genre:F1:0.8425 Acc:0.8278 Top5:0.9992 | LR:7.94e-05
+No improvement 1 epoch(s) | best MeanF1=0.8327
+
+Epoch 3/18 | backbone_trainable=True
+Train | Loss:0.0083 MeanF1:0.9460 | Artist:F1:0.9888 Acc:0.9896 Top5:0.9998 | Style:F1:0.9118 Acc:0.8935 Top5:0.9981 | Genre:F1:0.9373 Acc:0.9294 Top5:0.9999
+Val   | Loss:0.0122 MeanF1:0.8470 | Artist:F1:0.9385 Acc:0.9425 Top5:0.9925 | Style:F1:0.7530 Acc:0.7639 Top5:0.9819 | Genre:F1:0.8496 Acc:0.8343 Top5:0.9993 | LR:7.76e-05
+✓ Saved best → /home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_ft.pt (MeanF1=0.8470 Artist:0.9385 Style:0.7530 Genre:0.8496)
+
+Epoch 4/18 | backbone_trainable=True
+Train | Loss:0.0078 MeanF1:0.9562 | Artist:F1:0.9920 Acc:0.9919 Top5:0.9998 | Style:F1:0.9303 Acc:0.9136 Top5:0.9990 | Genre:F1:0.9464 Acc:0.9394 Top5:1.0000
+Val   | Loss:0.0117 MeanF1:0.8499 | Artist:F1:0.9406 Acc:0.9455 Top5:0.9931 | Style:F1:0.7570 Acc:0.7699 Top5:0.9835 | Genre:F1:0.8522 Acc:0.8380 Top5:0.9996 | LR:7.46e-05
+✓ Saved best → /home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_ft.pt (MeanF1=0.8499 Artist:0.9406 Style:0.7570 Genre:0.8522)
+
+Epoch 5/18 | backbone_trainable=True
+Train | Loss:0.0072 MeanF1:0.9655 | Artist:F1:0.9961 Acc:0.9963 Top5:0.9999 | Style:F1:0.9443 Acc:0.9320 Top5:0.9992 | Genre:F1:0.9560 Acc:0.9498 Top5:1.0000
+Val   | Loss:0.0116 MeanF1:0.8515 | Artist:F1:0.9466 Acc:0.9530 Top5:0.9918 | Style:F1:0.7589 Acc:0.7702 Top5:0.9816 | Genre:F1:0.8489 Acc:0.8362 Top5:0.9988 | LR:7.06e-05
+✓ Saved best → /home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_ft.pt (MeanF1=0.8515 Artist:0.9466 Style:0.7589 Genre:0.8489)
+
+Epoch 6/18 | backbone_trainable=True

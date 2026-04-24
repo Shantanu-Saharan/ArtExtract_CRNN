@@ -1,0 +1,26 @@
+========================================
+Top-25 stacked meta-ensemble (push run)
+Report:     /home/irohs/23b2445/CRNN/reports/top25_meta_push90_report.json
+Meta model: /home/irohs/23b2445/CRNN/reports/top25_meta_push90_models.pkl
+========================================
+Device: cuda
+Visible CUDA devices: 2
+Models: ['siglip2_probe', 'siglip2_ft', 'dino_top25_v2', 'dino_top25_a40', 'eva02_probe', 'clip_h_probe']
+
+================================================================================
+Loading siglip2_probe
+================================================================================
+  infer train (58104 samples)
+  infer val   (11579 samples)
+siglip2_probe      Artist=0.9507 Style=0.7594 Genre=0.8581 MeanF1=0.8561
+
+================================================================================
+Loading siglip2_ft
+================================================================================
+  infer train (58104 samples)
+  infer val   (11579 samples)
+siglip2_ft         Artist=0.9531 Style=0.7667 Genre=0.8551 MeanF1=0.8583
+
+================================================================================
+Loading dino_top25_v2
+================================================================================

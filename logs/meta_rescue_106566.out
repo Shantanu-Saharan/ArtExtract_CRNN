@@ -1,0 +1,73 @@
+========================================
+Top-25 stacked meta-ensemble (rescue run)
+Report:     /home/irohs/23b2445/CRNN/reports/top25_meta_rescue_report.json
+Meta model: /home/irohs/23b2445/CRNN/reports/top25_meta_rescue_models.pkl
+========================================
+[INFO] Including extra checkpoint: /home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_rescue.pt
+Device: cuda
+Visible CUDA devices: 2
+Models: ['siglip2_probe', 'siglip2_ft', 'dino_top25_v2', 'dino_top25_a40', 'eva02_probe', 'clip_h_probe', 'siglip2_rescue']
+
+================================================================================
+Loading siglip2_probe
+================================================================================
+  infer train (58104 samples)
+  infer val   (11579 samples)
+siglip2_probe      Artist=0.9507 Style=0.7594 Genre=0.8581 MeanF1=0.8561
+
+================================================================================
+Loading siglip2_ft
+================================================================================
+  infer train (58104 samples)
+  infer val   (11579 samples)
+siglip2_ft         Artist=0.9531 Style=0.7667 Genre=0.8551 MeanF1=0.8583
+
+================================================================================
+Loading dino_top25_v2
+================================================================================
+  infer train (58104 samples)
+  infer val   (11579 samples)
+dino_top25_v2      Artist=0.9284 Style=0.7352 Genre=0.8104 MeanF1=0.8247
+
+================================================================================
+Loading dino_top25_a40
+================================================================================
+  infer train (58104 samples)
+  infer val   (11579 samples)
+dino_top25_a40     Artist=0.9197 Style=0.7288 Genre=0.8085 MeanF1=0.8190
+
+================================================================================
+Loading eva02_probe
+================================================================================
+  infer train (58104 samples)
+  infer val   (11579 samples)
+eva02_probe        Artist=0.8609 Style=0.7059 Genre=0.7964 MeanF1=0.7877
+
+================================================================================
+Loading clip_h_probe
+================================================================================
+  infer train (58104 samples)
+  infer val   (11579 samples)
+clip_h_probe       Artist=0.7236 Style=0.6347 Genre=0.7639 MeanF1=0.7074
+
+================================================================================
+Loading siglip2_rescue
+================================================================================
+  infer train (58104 samples)
+  infer val   (11579 samples)
+siglip2_rescue     Artist=0.9664 Style=0.7902 Genre=0.8656 MeanF1=0.8741
+
+================================================================================
+STACKED META-ENSEMBLE
+================================================================================
+artist   C=0.03 devF1=1.0000 valF1=0.9610 valAcc=0.9651
+[warn] repairing 81 non-finite logits for task=style model_index=5
+style    C=0.03 devF1=0.9854 valF1=0.7926 valAcc=0.7991
+genre    C=0.03 devF1=0.9871 valF1=0.8672 valAcc=0.8564
+--------------------------------------------------------------------------------
+Stacked MeanF1=0.8736
+--------------------------------------------------------------------------------
+Best single-model MeanF1=0.8741
+Gain=-0.0005
+Report: /home/irohs/23b2445/CRNN/reports/top25_meta_rescue_report.json
+Meta models: /home/irohs/23b2445/CRNN/reports/top25_meta_rescue_models.pkl

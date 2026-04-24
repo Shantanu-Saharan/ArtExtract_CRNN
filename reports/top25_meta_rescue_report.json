@@ -1,0 +1,255 @@
+{
+  "models": [
+    {
+      "label": "siglip2_probe",
+      "checkpoint": "checkpoints/linear_probe_top25_siglip2.pt",
+      "image_size": 384,
+      "use_tta": true,
+      "meta": {
+        "family": "siglip_probe",
+        "model_name_or_path": "/home/irohs/23b2445/CRNN/weights/siglip2-so400m-patch16-384",
+        "label": "siglip2_probe",
+        "ckpt_path": "checkpoints/linear_probe_top25_siglip2.pt"
+      }
+    },
+    {
+      "label": "siglip2_ft",
+      "checkpoint": "checkpoints/best_top25_siglip2_ft.pt",
+      "image_size": 384,
+      "use_tta": true,
+      "meta": {
+        "family": "siglip_ft",
+        "model_name_or_path": "/home/irohs/23b2445/CRNN/weights/siglip2-so400m-patch16-384",
+        "label": "siglip2_ft",
+        "ckpt_path": "checkpoints/best_top25_siglip2_ft.pt"
+      }
+    },
+    {
+      "label": "dino_top25_v2",
+      "checkpoint": "checkpoints/best_top25_v2.pt",
+      "image_size": 448,
+      "use_tta": true,
+      "meta": {
+        "family": "multitask",
+        "backbone": "dinov2_vitl14",
+        "arcface_tasks": [
+          "artist",
+          "style"
+        ],
+        "label": "dino_top25_v2",
+        "ckpt_path": "checkpoints/best_top25_v2.pt"
+      }
+    },
+    {
+      "label": "dino_top25_a40",
+      "checkpoint": "checkpoints/best_top25_a40.pt",
+      "image_size": 448,
+      "use_tta": true,
+      "meta": {
+        "family": "multitask",
+        "backbone": "dinov2_vitl14",
+        "arcface_tasks": [
+          "artist",
+          "style"
+        ],
+        "label": "dino_top25_a40",
+        "ckpt_path": "checkpoints/best_top25_a40.pt"
+      }
+    },
+    {
+      "label": "eva02_probe",
+      "checkpoint": "checkpoints/linear_probe_top25_eva02_1gpu.pt",
+      "image_size": 448,
+      "use_tta": false,
+      "meta": {
+        "family": "multitask",
+        "backbone": "eva02_large",
+        "arcface_tasks": [],
+        "label": "eva02_probe",
+        "ckpt_path": "checkpoints/linear_probe_top25_eva02_1gpu.pt"
+      }
+    },
+    {
+      "label": "clip_h_probe",
+      "checkpoint": "checkpoints/linear_probe_top25_clip_h.pt",
+      "image_size": 448,
+      "use_tta": false,
+      "meta": {
+        "family": "multitask",
+        "backbone": "clip_vith14",
+        "arcface_tasks": [],
+        "label": "clip_h_probe",
+        "ckpt_path": "checkpoints/linear_probe_top25_clip_h.pt"
+      }
+    },
+    {
+      "label": "siglip2_rescue",
+      "checkpoint": "/home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_rescue.pt",
+      "image_size": 384,
+      "use_tta": true,
+      "meta": {
+        "family": "siglip_ft",
+        "model_name_or_path": "/home/irohs/23b2445/CRNN/weights/siglip2-so400m-patch16-384",
+        "label": "siglip2_rescue",
+        "ckpt_path": "/home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_rescue.pt"
+      }
+    }
+  ],
+  "feature_mode": "logits_probs",
+  "tta_views": 4,
+  "standardized_features": true,
+  "individual_val": {
+    "siglip2_probe": {
+      "artist": {
+        "macro_f1": 0.9507452074552873,
+        "accuracy": 0.9555845852384063,
+        "top5_accuracy": 0.996407576747224
+      },
+      "style": {
+        "macro_f1": 0.759435613988415,
+        "accuracy": 0.7739873909664047,
+        "top5_accuracy": 0.9898091372311945
+      },
+      "genre": {
+        "macro_f1": 0.8581482641952546,
+        "accuracy": 0.8440279816909924,
+        "top5_accuracy": 0.9998272735123931
+      }
+    },
+    "siglip2_ft": {
+      "artist": {
+        "macro_f1": 0.9530605108920287,
+        "accuracy": 0.9598301763553233,
+        "top5_accuracy": 0.9941214892227302
+      },
+      "style": {
+        "macro_f1": 0.766723179144125,
+        "accuracy": 0.776405561792901,
+        "top5_accuracy": 0.9844546161153813
+      },
+      "genre": {
+        "macro_f1": 0.8551031143872729,
+        "accuracy": 0.8421279903273167,
+        "top5_accuracy": 0.9993090940495725
+      }
+    },
+    "dino_top25_v2": {
+      "artist": {
+        "macro_f1": 0.9284422413812284,
+        "accuracy": 0.9346832135858916,
+        "top5_accuracy": 0.9804049640757675
+      },
+      "style": {
+        "macro_f1": 0.7352481123818806,
+        "accuracy": 0.7346921150358408,
+        "top5_accuracy": 0.921582174626479
+      },
+      "genre": {
+        "macro_f1": 0.8104233152162461,
+        "accuracy": 0.7959236548924777,
+        "top5_accuracy": 0.9981000086363244
+      }
+    },
+    "dino_top25_a40": {
+      "artist": {
+        "macro_f1": 0.919700019709135,
+        "accuracy": 0.9261920313520575,
+        "top5_accuracy": 0.984323971260614
+      },
+      "style": {
+        "macro_f1": 0.7287534546424281,
+        "accuracy": 0.7320148544779342,
+        "top5_accuracy": 0.932463943345712
+      },
+      "genre": {
+        "macro_f1": 0.8084761155209362,
+        "accuracy": 0.7936782105535884,
+        "top5_accuracy": 0.9983590983677347
+      }
+    },
+    "eva02_probe": {
+      "artist": {
+        "macro_f1": 0.860880641411254,
+        "accuracy": 0.8749183540169824,
+        "top5_accuracy": 0.9719137818419333
+      },
+      "style": {
+        "macro_f1": 0.7058546098079206,
+        "accuracy": 0.7176785560065636,
+        "top5_accuracy": 0.97789100958632
+      },
+      "genre": {
+        "macro_f1": 0.7963535371968391,
+        "accuracy": 0.780550997495466,
+        "top5_accuracy": 0.9992227308057691
+      }
+    },
+    "clip_h_probe": {
+      "artist": {
+        "macro_f1": 0.7236136822080672,
+        "accuracy": 0.752449379490529,
+        "top5_accuracy": 0.9408883082952318
+      },
+      "style": {
+        "macro_f1": 0.6347256638254805,
+        "accuracy": 0.6475516020381725,
+        "top5_accuracy": 0.9542274807841783
+      },
+      "genre": {
+        "macro_f1": 0.7639038595664986,
+        "accuracy": 0.7491147767510148,
+        "top5_accuracy": 0.9982727351239312
+      }
+    },
+    "siglip2_rescue": {
+      "artist": {
+        "macro_f1": 0.9664222922538082,
+        "accuracy": 0.9709340300457218,
+        "top5_accuracy": 0.9954278249510125
+      },
+      "style": {
+        "macro_f1": 0.7901901666431911,
+        "accuracy": 0.7958372916486743,
+        "top5_accuracy": 0.980050090681406
+      },
+      "genre": {
+        "macro_f1": 0.8656260498338793,
+        "accuracy": 0.8551688401416357,
+        "top5_accuracy": 0.9976681924173072
+      }
+    }
+  },
+  "meta_search": {
+    "artist": {
+      "C": 0.03,
+      "dev_f1": 1.0
+    },
+    "style": {
+      "C": 0.03,
+      "dev_f1": 0.9853749133129074
+    },
+    "genre": {
+      "C": 0.03,
+      "dev_f1": 0.9870583858164609
+    }
+  },
+  "ensemble_val": {
+    "artist": {
+      "macro_f1": 0.9610265153358515,
+      "accuracy": 0.965055519268452,
+      "top5_accuracy": 0.9960809928151535
+    },
+    "style": {
+      "macro_f1": 0.7926241040902944,
+      "accuracy": 0.799119094913205,
+      "top5_accuracy": 0.9838500734087572
+    },
+    "genre": {
+      "macro_f1": 0.8671702782717864,
+      "accuracy": 0.8563779255548838,
+      "top5_accuracy": 0.9996545470247863
+    }
+  },
+  "ensemble_mean_f1": 0.8736069658993108,
+  "best_single_mean_f1": 0.8740795029102927
+}

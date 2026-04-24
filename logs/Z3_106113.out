@@ -1,0 +1,62 @@
+========================================
+Top-25 stacked meta-ensemble
+Report:     /home/irohs/23b2445/CRNN/reports/top25_meta_ensemble_report.json
+Meta model: /home/irohs/23b2445/CRNN/reports/top25_meta_models.pkl
+GPUs:       2
+========================================
+Device: cuda
+Visible CUDA devices: 2
+Models: ['siglip2_probe', 'siglip2_ft', 'dino_top25_v2', 'dino_top25_a40', 'eva02_probe', 'clip_h_probe']
+
+================================================================================
+Loading siglip2_probe
+================================================================================
+[cache] using cached logits for siglip2_probe
+siglip2_probe      Artist=0.9584 Style=0.7587 Genre=0.8567 MeanF1=0.8579
+
+================================================================================
+Loading siglip2_ft
+================================================================================
+[cache] using cached logits for siglip2_ft
+siglip2_ft         Artist=0.9597 Style=0.7659 Genre=0.8533 MeanF1=0.8596
+
+================================================================================
+Loading dino_top25_v2
+================================================================================
+  infer train (58104 samples)
+  infer val   (11579 samples)
+dino_top25_v2      Artist=0.9284 Style=0.7352 Genre=0.8104 MeanF1=0.8247
+
+================================================================================
+Loading dino_top25_a40
+================================================================================
+  infer train (58104 samples)
+  infer val   (11579 samples)
+dino_top25_a40     Artist=0.9197 Style=0.7288 Genre=0.8085 MeanF1=0.8190
+
+================================================================================
+Loading eva02_probe
+================================================================================
+[cache] using cached logits for eva02_probe
+eva02_probe        Artist=0.8609 Style=0.7059 Genre=0.7964 MeanF1=0.7877
+
+================================================================================
+Loading clip_h_probe
+================================================================================
+[cache] using cached logits for clip_h_probe
+clip_h_probe       Artist=0.7236 Style=0.6347 Genre=0.7639 MeanF1=0.7074
+
+================================================================================
+STACKED META-ENSEMBLE
+================================================================================
+artist   C=0.1 devF1=0.9994 valF1=0.9573 valAcc=0.9608
+[warn] repairing 81 non-finite logits for task=style model_index=5
+style    C=0.1 devF1=0.9793 valF1=0.7741 valAcc=0.7881
+genre    C=1.0 devF1=0.9826 valF1=0.8624 valAcc=0.8486
+--------------------------------------------------------------------------------
+Stacked MeanF1=0.8646
+--------------------------------------------------------------------------------
+Best single-model MeanF1=0.8596
+Gain=+0.0050
+Report: /home/irohs/23b2445/CRNN/reports/top25_meta_ensemble_report.json
+Meta models: /home/irohs/23b2445/CRNN/reports/top25_meta_models.pkl

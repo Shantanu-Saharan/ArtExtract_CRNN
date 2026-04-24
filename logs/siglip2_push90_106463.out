@@ -1,0 +1,26 @@
+========================================
+Top-25 SigLIP2 push run
+Model dir:      /home/irohs/23b2445/CRNN/weights/siglip2-so400m-patch16-384
+Init checkpoint:/home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_ft.pt
+Save path:      /home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_push90.pt
+========================================
+[INFO] Warm-starting from best SigLIP2 checkpoint /home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_ft.pt
+Device: cuda:0 | world_size=2
+Model: /home/irohs/23b2445/CRNN/weights/siglip2-so400m-patch16-384
+Train: 58104  Val: 11579
+Per-GPU batch=4 | accum=8 | effective batch=64
+Epochs=24 | freeze_backbone_epochs=0 | TTA=True (4 views)
+Style path: patch_only=False fusion=True | EMA=True decay=0.9996
+[INFO] Warm-started model from /home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_ft.pt | matched=466 missing=10 unexpected=0
+
+Epoch 1/24 | backbone_trainable=True
+Train | Loss:0.0088 MeanF1:0.8072 | Artist:F1:0.9987 Acc:0.9985 Top5:1.0000 | Style:F1:0.4563 Acc:0.4797 Top5:0.7745 | Genre:F1:0.9665 Acc:0.9621 Top5:1.0000
+Val   | Loss:0.0223 MeanF1:0.6098 | Artist:F1:0.9486 Acc:0.9540 Top5:0.9915 | Style:F1:0.0284 Acc:0.1149 Top5:0.2459 | Genre:F1:0.8523 Acc:0.8388 Top5:0.9991 | LR:4.00e-05
+✓ Saved best → /home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_push90.pt (MeanF1=0.6098 Artist:0.9486 Style:0.0284 Genre:0.8523)
+
+Epoch 2/24 | backbone_trainable=True
+Train | Loss:0.0042 MeanF1:0.9198 | Artist:F1:0.9984 Acc:0.9983 Top5:0.9999 | Style:F1:0.7953 Acc:0.7584 Top5:0.9817 | Genre:F1:0.9656 Acc:0.9610 Top5:1.0000
+Val   | Loss:0.0091 MeanF1:0.7245 | Artist:F1:0.9519 Acc:0.9572 Top5:0.9935 | Style:F1:0.3661 Acc:0.4036 Top5:0.7500 | Genre:F1:0.8554 Acc:0.8426 Top5:0.9988 | LR:5.99e-05
+✓ Saved best → /home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_push90.pt (MeanF1=0.7245 Artist:0.9519 Style:0.3661 Genre:0.8554)
+
+Epoch 3/24 | backbone_trainable=True

@@ -1,0 +1,123 @@
+<svg width="1200" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define styles -->
+  <defs>
+    <style>
+      .box {
+        fill: #f8f9fa;
+        stroke: #2c3e50;
+        stroke-width: 2;
+        rx: 8;
+      }
+      .arrow {
+        stroke: #34495e;
+        stroke-width: 2;
+        fill: none;
+        marker-end: url(#arrowhead);
+      }
+      .text {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        font-size: 14px;
+        fill: #2c3e50;
+        text-anchor: middle;
+      }
+      .shape-text {
+        font-family: 'Courier New', monospace;
+        font-size: 11px;
+        fill: #7f8c8d;
+        text-anchor: middle;
+      }
+      .title {
+        font-weight: bold;
+        font-size: 16px;
+      }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#34495e"/>
+    </marker>
+  </defs>
+
+  <!-- Input Image -->
+  <rect class="box" x="10" y="100" width="120" height="80"/>
+  <text class="text title" x="70" y="130">Input Image</text>
+  <text class="text" x="70" y="150">224×224×3</text>
+  
+  <!-- Arrow 1 -->
+  <path class="arrow" d="M 130 140 L 170 140"/>
+  <text class="shape-text" x="150" y="130">224×224×3</text>
+
+  <!-- ResNet50 Backbone -->
+  <rect class="box" x="170" y="100" width="140" height="80"/>
+  <text class="text title" x="240" y="125">ResNet50</text>
+  <text class="text" x="240" y="145">Backbone</text>
+  <text class="text" x="240" y="165">(pretrained,</text>
+  <text class="text" x="240" y="180">frozen early)</text>
+
+  <!-- Arrow 2 -->
+  <path class="arrow" d="M 310 140 L 350 140"/>
+  <text class="shape-text" x="330" y="130">7×7×2048</text>
+
+  <!-- Spatial Feature Map -->
+  <rect class="box" x="350" y="100" width="120" height="80"/>
+  <text class="text title" x="410" y="125">Spatial</text>
+  <text class="text" x="410" y="145">Feature Map</text>
+  <text class="text" x="410" y="165">7×7×2048</text>
+
+  <!-- Arrow 3 -->
+  <path class="arrow" d="M 470 140 L 510 140"/>
+  <text class="shape-text" x="490" y="130">49×2048</text>
+
+  <!-- Sequence Reshape -->
+  <rect class="box" x="510" y="100" width="120" height="80"/>
+  <text class="text title" x="570" y="125">Sequence</text>
+  <text class="text" x="570" y="145">Reshape</text>
+  <text class="text" x="570" y="165">49 × 2048</text>
+
+  <!-- Arrow 4 -->
+  <path class="arrow" d="M 630 140 L 670 140"/>
+  <text class="shape-text" x="650" y="130">49×512</text>
+
+  <!-- Bidirectional LSTM -->
+  <rect class="box" x="670" y="100" width="140" height="80"/>
+  <text class="text title" x="740" y="125">Bidirectional</text>
+  <text class="text" x="740" y="145">LSTM</text>
+  <text class="text" x="740" y="165">(hidden=256,</text>
+  <text class="text" x="740" y="180">2× directions)</text>
+
+  <!-- Arrow 5 -->
+  <path class="arrow" d="M 810 140 L 850 140"/>
+  <text class="shape-text" x="830" y="130">512</text>
+
+  <!-- Pooling -->
+  <rect class="box" x="850" y="100" width="120" height="80"/>
+  <text class="text title" x="910" y="125">Pooling</text>
+  <text class="text" x="910" y="145">Attention/</text>
+  <text class="text" x="910" y="165">Mean</text>
+
+  <!-- Arrow 6 -->
+  <path class="arrow" d="M 970 140 L 1010 140"/>
+  <text class="shape-text" x="990" y="130">512</text>
+
+  <!-- Dropout -->
+  <rect class="box" x="1010" y="100" width="80" height="80"/>
+  <text class="text title" x="1050" y="135">Dropout</text>
+  <text class="text" x="1050" y="155">(0.3)</text>
+
+  <!-- Arrow 7 -->
+  <path class="arrow" d="M 1090 140 L 1130 140"/>
+
+  <!-- Classification Heads -->
+  <rect class="box" x="1130" y="80" width="60" height="40"/>
+  <text class="text" x="1160" y="105">Style</text>
+
+  <rect class="box" x="1130" y="130" width="60" height="40"/>
+  <text class="text" x="1160" y="155">Artist</text>
+
+  <rect class="box" x="1130" y="180" width="60" height="40"/>
+  <text class="text" x="1160" y="205">Genre</text>
+
+  <!-- Title -->
+  <text class="text title" x="600" y="30" style="font-size: 20px;">CRNN Architecture for Art Style Classification</text>
+  
+  <!-- Legend -->
+  <text class="text" x="50" y="250" style="font-size: 12px; text-anchor: start;">Note: Tensor shapes shown above arrows. Final heads output class probabilities.</text>
+</svg>

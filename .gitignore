@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Jupyter / IDE
+.ipynb_checkpoints/
+.history/
+.vscode/
+.idea/
+.claude/
+.kiro/
+.vendor/
+wikiart/
+test_scripts/
+checkpoints/
+*.swp
+.DS_Store
+
+# Local datasets (large; not shipped with the repo)
+wikiart_images/
+wikiart_images_small/
+debug_images/
+
+# Checkpoints & model weights
+checkpoints/*
+!checkpoints/.gitkeep
+*.pt
+*.pth
+reports/meta_cache/
+logs/*.err
+*.tar.gz
+*.zip
+
+# Generated training artifacts (paths align with train.py defaults)
+checkpoints/training_curves.png
+checkpoints/metrics.json
+checkpoints/confusion_matrix.png
+checkpoints/classification_report.png
+checkpoints/training_history.json
+checkpoints/multitask_training_curves.png
+checkpoints/multitask_training_history.json
+
+# Outlier pipeline outputs (keep directory layout via .gitkeep)
+outliers/**/*.csv
+outliers/**/*.jpg
+outliers/**/*.jpeg
+outliers/**/*.png
+!outliers/**/.gitkeep
+
+# NumPy / misc binary caches
+*.npy

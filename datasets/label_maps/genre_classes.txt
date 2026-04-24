@@ -1,0 +1,7 @@
+abstract_painting
+cityscape
+genre_painting
+illustration
+landscape
+portrait
+religious_painting

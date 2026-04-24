@@ -1,0 +1,29 @@
+{
+  "summary_date": "2026-04-23",
+  "selected_runs": [
+    {
+      "name": "stacked_meta_ensemble",
+      "log": "logs/Z3_106113.out",
+      "mean_f1": 0.8646,
+      "artist_f1": 0.9573,
+      "style_f1": 0.7741,
+      "genre_f1": 0.8624
+    },
+    {
+      "name": "siglip2_ft",
+      "log": "logs/siglip2_ft_105918.out",
+      "train_log_best_mean_f1": 0.8515,
+      "final_report_mean_f1": 0.8596
+    },
+    {
+      "name": "dino_top25_a40",
+      "log": "logs/top25_a40_best_100772.out",
+      "train_log_best_mean_f1": 0.8177,
+      "final_report_mean_f1": 0.819
+    }
+  ],
+  "report_files": [
+    "reports/top25_meta_ensemble_report.json",
+    "reports/top25_meta_models.pkl"
+  ]
+}

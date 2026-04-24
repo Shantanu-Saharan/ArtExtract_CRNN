@@ -1,0 +1,98 @@
+========================================
+Top-25 SigLIP2 rescue run
+Model dir:      /home/irohs/23b2445/CRNN/weights/siglip2-so400m-patch16-384
+Init checkpoint:/home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_ft.pt
+Save path:      /home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_rescue.pt
+========================================
+[INFO] Warm-starting from best SigLIP2 checkpoint /home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_ft.pt
+Device: cuda:0 | world_size=2
+Model: /home/irohs/23b2445/CRNN/weights/siglip2-so400m-patch16-384
+Train: 58104  Val: 11579
+Per-GPU batch=4 | accum=8 | effective batch=64
+Epochs=16 | freeze_backbone_epochs=1 | TTA=True (2 views)
+Style path: patch_only=False fusion=True | EMA=False decay=0.9996
+[INFO] Warm-started model from /home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_ft.pt | matched=466 missing=10 unexpected=0
+
+Epoch 1/16 | backbone_trainable=False
+Train | Loss:0.0061 MeanF1:0.9773 | Artist:F1:0.9986 Acc:0.9986 Top5:1.0000 | Style:F1:0.9640 Acc:0.9551 Top5:0.9996 | Genre:F1:0.9694 Acc:0.9649 Top5:1.0000
+Val   | Loss:0.0107 MeanF1:0.8559 | Artist:F1:0.9504 Acc:0.9562 Top5:0.9922 | Style:F1:0.7640 Acc:0.7734 Top5:0.9825 | Genre:F1:0.8534 Acc:0.8408 Top5:0.9988 | LR:5.00e-05
+✓ Saved best → /home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_rescue.pt (MeanF1=0.8559 Artist:0.9504 Style:0.7640 Genre:0.8534)
+
+Epoch 2/16 | backbone_trainable=True
+Train | Loss:0.0062 MeanF1:0.9733 | Artist:F1:0.9981 Acc:0.9983 Top5:1.0000 | Style:F1:0.9551 Acc:0.9440 Top5:0.9996 | Genre:F1:0.9666 Acc:0.9622 Top5:1.0000
+Val   | Loss:0.0108 MeanF1:0.8556 | Artist:F1:0.9458 Acc:0.9507 Top5:0.9925 | Style:F1:0.7650 Acc:0.7714 Top5:0.9807 | Genre:F1:0.8561 Acc:0.8436 Top5:0.9987 | LR:4.95e-05
+No improvement 1 epoch(s) | best MeanF1=0.8559
+
+Epoch 3/16 | backbone_trainable=True
+Train | Loss:0.0059 MeanF1:0.9785 | Artist:F1:0.9991 Acc:0.9992 Top5:1.0000 | Style:F1:0.9637 Acc:0.9554 Top5:0.9996 | Genre:F1:0.9726 Acc:0.9694 Top5:1.0000
+Val   | Loss:0.0109 MeanF1:0.8552 | Artist:F1:0.9492 Acc:0.9553 Top5:0.9931 | Style:F1:0.7615 Acc:0.7694 Top5:0.9798 | Genre:F1:0.8550 Acc:0.8420 Top5:0.9984 | LR:4.81e-05
+No improvement 2 epoch(s) | best MeanF1=0.8559
+
+Epoch 4/16 | backbone_trainable=True
+Train | Loss:0.0057 MeanF1:0.9809 | Artist:F1:0.9990 Acc:0.9991 Top5:0.9999 | Style:F1:0.9683 Acc:0.9633 Top5:0.9999 | Genre:F1:0.9754 Acc:0.9733 Top5:1.0000
+Val   | Loss:0.0108 MeanF1:0.8593 | Artist:F1:0.9498 Acc:0.9549 Top5:0.9928 | Style:F1:0.7703 Acc:0.7781 Top5:0.9779 | Genre:F1:0.8579 Acc:0.8448 Top5:0.9982 | LR:4.57e-05
+✓ Saved best → /home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_rescue.pt (MeanF1=0.8593 Artist:0.9498 Style:0.7703 Genre:0.8579)
+
+Epoch 5/16 | backbone_trainable=True
+Train | Loss:0.0055 MeanF1:0.9837 | Artist:F1:0.9994 Acc:0.9995 Top5:1.0000 | Style:F1:0.9730 Acc:0.9690 Top5:0.9998 | Genre:F1:0.9787 Acc:0.9768 Top5:1.0000
+Val   | Loss:0.0109 MeanF1:0.8569 | Artist:F1:0.9490 Acc:0.9553 Top5:0.9948 | Style:F1:0.7649 Acc:0.7761 Top5:0.9775 | Genre:F1:0.8569 Acc:0.8436 Top5:0.9981 | LR:4.26e-05
+No improvement 1 epoch(s) | best MeanF1=0.8593
+
+Epoch 6/16 | backbone_trainable=True
+Train | Loss:0.0054 MeanF1:0.9854 | Artist:F1:0.9997 Acc:0.9997 Top5:1.0000 | Style:F1:0.9768 Acc:0.9735 Top5:0.9999 | Genre:F1:0.9798 Acc:0.9797 Top5:1.0000
+Val   | Loss:0.0110 MeanF1:0.8602 | Artist:F1:0.9492 Acc:0.9556 Top5:0.9931 | Style:F1:0.7751 Acc:0.7758 Top5:0.9784 | Genre:F1:0.8562 Acc:0.8426 Top5:0.9980 | LR:3.87e-05
+✓ Saved best → /home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_rescue.pt (MeanF1=0.8602 Artist:0.9492 Style:0.7751 Genre:0.8562)
+
+Epoch 7/16 | backbone_trainable=True
+Train | Loss:0.0052 MeanF1:0.9869 | Artist:F1:0.9998 Acc:0.9997 Top5:1.0000 | Style:F1:0.9785 Acc:0.9761 Top5:1.0000 | Genre:F1:0.9825 Acc:0.9821 Top5:1.0000
+Val   | Loss:0.0108 MeanF1:0.8639 | Artist:F1:0.9532 Acc:0.9589 Top5:0.9935 | Style:F1:0.7796 Acc:0.7830 Top5:0.9760 | Genre:F1:0.8589 Acc:0.8461 Top5:0.9973 | LR:3.45e-05
+✓ Saved best → /home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_rescue.pt (MeanF1=0.8639 Artist:0.9532 Style:0.7796 Genre:0.8589)
+
+Epoch 8/16 | backbone_trainable=True
+Train | Loss:0.0051 MeanF1:0.9880 | Artist:F1:0.9997 Acc:0.9997 Top5:1.0000 | Style:F1:0.9808 Acc:0.9791 Top5:0.9999 | Genre:F1:0.9835 Acc:0.9837 Top5:1.0000
+Val   | Loss:0.0107 MeanF1:0.8642 | Artist:F1:0.9523 Acc:0.9572 Top5:0.9938 | Style:F1:0.7821 Acc:0.7847 Top5:0.9779 | Genre:F1:0.8581 Acc:0.8460 Top5:0.9972 | LR:2.99e-05
+✓ Saved best → /home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_rescue.pt (MeanF1=0.8642 Artist:0.9523 Style:0.7821 Genre:0.8581)
+
+Epoch 9/16 | backbone_trainable=True
+Train | Loss:0.0051 MeanF1:0.9884 | Artist:F1:0.9995 Acc:0.9995 Top5:1.0000 | Style:F1:0.9811 Acc:0.9799 Top5:1.0000 | Genre:F1:0.9847 Acc:0.9848 Top5:1.0000
+Val   | Loss:0.0108 MeanF1:0.8654 | Artist:F1:0.9522 Acc:0.9575 Top5:0.9928 | Style:F1:0.7843 Acc:0.7880 Top5:0.9769 | Genre:F1:0.8598 Acc:0.8482 Top5:0.9972 | LR:2.51e-05
+✓ Saved best → /home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_rescue.pt (MeanF1=0.8654 Artist:0.9522 Style:0.7843 Genre:0.8598)
+
+Epoch 10/16 | backbone_trainable=True
+Train | Loss:0.0050 MeanF1:0.9892 | Artist:F1:0.9996 Acc:0.9997 Top5:1.0000 | Style:F1:0.9828 Acc:0.9817 Top5:1.0000 | Genre:F1:0.9852 Acc:0.9861 Top5:1.0000
+Val   | Loss:0.0108 MeanF1:0.8661 | Artist:F1:0.9574 Acc:0.9608 Top5:0.9935 | Style:F1:0.7820 Acc:0.7854 Top5:0.9771 | Genre:F1:0.8588 Acc:0.8469 Top5:0.9972 | LR:2.05e-05
+✓ Saved best → /home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_rescue.pt (MeanF1=0.8661 Artist:0.9574 Style:0.7820 Genre:0.8588)
+
+Epoch 11/16 | backbone_trainable=True
+Train | Loss:0.0050 MeanF1:0.9900 | Artist:F1:0.9997 Acc:0.9996 Top5:1.0000 | Style:F1:0.9839 Acc:0.9832 Top5:1.0000 | Genre:F1:0.9865 Acc:0.9872 Top5:1.0000
+Val   | Loss:0.0108 MeanF1:0.8669 | Artist:F1:0.9556 Acc:0.9608 Top5:0.9938 | Style:F1:0.7841 Acc:0.7886 Top5:0.9767 | Genre:F1:0.8610 Acc:0.8490 Top5:0.9972 | LR:1.63e-05
+✓ Saved best → /home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_rescue.pt (MeanF1=0.8669 Artist:0.9556 Style:0.7841 Genre:0.8610)
+
+Epoch 12/16 | backbone_trainable=True
+Train | Loss:0.0049 MeanF1:0.9902 | Artist:F1:0.9998 Acc:0.9999 Top5:1.0000 | Style:F1:0.9845 Acc:0.9841 Top5:1.0000 | Genre:F1:0.9862 Acc:0.9873 Top5:1.0000
+Val   | Loss:0.0108 MeanF1:0.8659 | Artist:F1:0.9553 Acc:0.9598 Top5:0.9948 | Style:F1:0.7813 Acc:0.7861 Top5:0.9760 | Genre:F1:0.8611 Acc:0.8492 Top5:0.9965 | LR:1.24e-05
+No improvement 1 epoch(s) | best MeanF1=0.8669
+
+Epoch 13/16 | backbone_trainable=True
+Train | Loss:0.0048 MeanF1:0.9907 | Artist:F1:0.9997 Acc:0.9997 Top5:1.0000 | Style:F1:0.9850 Acc:0.9847 Top5:1.0000 | Genre:F1:0.9874 Acc:0.9883 Top5:1.0000
+Val   | Loss:0.0108 MeanF1:0.8699 | Artist:F1:0.9605 Acc:0.9644 Top5:0.9948 | Style:F1:0.7858 Acc:0.7892 Top5:0.9769 | Genre:F1:0.8633 Acc:0.8513 Top5:0.9966 | LR:9.30e-06
+✓ Saved best → /home/irohs/23b2445/CRNN/checkpoints/best_top25_siglip2_rescue.pt (MeanF1=0.8699 Artist:0.9605 Style:0.7858 Genre:0.8633)
+
+Epoch 14/16 | backbone_trainable=True
+Train | Loss:0.0048 MeanF1:0.9911 | Artist:F1:0.9998 Acc:0.9999 Top5:1.0000 | Style:F1:0.9855 Acc:0.9853 Top5:1.0000 | Genre:F1:0.9880 Acc:0.9892 Top5:1.0000
+Val   | Loss:0.0108 MeanF1:0.8684 | Artist:F1:0.9584 Acc:0.9631 Top5:0.9941 | Style:F1:0.7864 Acc:0.7896 Top5:0.9768 | Genre:F1:0.8604 Acc:0.8489 Top5:0.9970 | LR:6.95e-06
+No improvement 1 epoch(s) | best MeanF1=0.8699
+
+Epoch 15/16 | backbone_trainable=True
+Train | Loss:0.0048 MeanF1:0.9915 | Artist:F1:1.0000 Acc:1.0000 Top5:1.0000 | Style:F1:0.9862 Acc:0.9863 Top5:1.0000 | Genre:F1:0.9883 Acc:0.9897 Top5:1.0000
+Val   | Loss:0.0108 MeanF1:0.8696 | Artist:F1:0.9588 Acc:0.9631 Top5:0.9938 | Style:F1:0.7898 Acc:0.7917 Top5:0.9775 | Genre:F1:0.8601 Acc:0.8490 Top5:0.9962 | LR:5.49e-06
+No improvement 2 epoch(s) | best MeanF1=0.8699
+
+Epoch 16/16 | backbone_trainable=True
+Train | Loss:0.0048 MeanF1:0.9914 | Artist:F1:0.9999 Acc:0.9999 Top5:1.0000 | Style:F1:0.9864 Acc:0.9858 Top5:1.0000 | Genre:F1:0.9878 Acc:0.9891 Top5:1.0000
+Val   | Loss:0.0108 MeanF1:0.8691 | Artist:F1:0.9573 Acc:0.9621 Top5:0.9951 | Style:F1:0.7889 Acc:0.7897 Top5:0.9760 | Genre:F1:0.8610 Acc:0.8495 Top5:0.9965 | LR:5.00e-06
+No improvement 3 epoch(s) | best MeanF1=0.8699
+
+=== SigLIP 2 fine-tuning complete ===
+Best MeanF1: 0.8699
+History: /home/irohs/23b2445/CRNN/reports/top25_siglip2_rescue_history.json
