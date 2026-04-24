@@ -1,29 +1,90 @@
 {
-  "summary_date": "2026-04-23",
+  "summary_date": "2026-04-24",
+  "best_result": {
+    "name": "siglip2_rescue",
+    "type": "single_model",
+    "mean_f1": 0.8741,
+    "artist_f1": 0.9664,
+    "style_f1": 0.7902,
+    "genre_f1": 0.8656
+  },
   "selected_runs": [
     {
-      "name": "stacked_meta_ensemble",
-      "log": "logs/Z3_106113.out",
-      "mean_f1": 0.8646,
-      "artist_f1": 0.9573,
-      "style_f1": 0.7741,
-      "genre_f1": 0.8624
+      "name": "stacked_meta_ensemble_rescue",
+      "log": "logs/meta_rescue_106566.out",
+      "report": "reports/top25_meta_rescue_report.json",
+      "models": ["siglip2_probe", "siglip2_ft", "dino_top25_v2", "dino_top25_a40", "eva02_probe", "clip_h_probe", "siglip2_rescue"],
+      "mean_f1": 0.8736,
+      "artist_f1": 0.9610,
+      "style_f1": 0.7926,
+      "genre_f1": 0.8672,
+      "artist_acc": 0.9651,
+      "style_acc": 0.7991,
+      "genre_acc": 0.8564,
+      "gain_over_best_single": -0.0005
+    },
+    {
+      "name": "siglip2_rescue",
+      "log": "logs/meta_rescue_106566.out",
+      "mean_f1": 0.8741,
+      "artist_f1": 0.9664,
+      "style_f1": 0.7902,
+      "genre_f1": 0.8656
     },
     {
       "name": "siglip2_ft",
-      "log": "logs/siglip2_ft_105918.out",
-      "train_log_best_mean_f1": 0.8515,
-      "final_report_mean_f1": 0.8596
+      "log": "logs/meta_rescue_106566.out",
+      "mean_f1": 0.8583,
+      "artist_f1": 0.9531,
+      "style_f1": 0.7667,
+      "genre_f1": 0.8551
+    },
+    {
+      "name": "siglip2_probe",
+      "log": "logs/meta_rescue_106566.out",
+      "mean_f1": 0.8561,
+      "artist_f1": 0.9507,
+      "style_f1": 0.7594,
+      "genre_f1": 0.8581
+    },
+    {
+      "name": "dino_top25_v2",
+      "log": "logs/meta_rescue_106566.out",
+      "mean_f1": 0.8247,
+      "artist_f1": 0.9284,
+      "style_f1": 0.7352,
+      "genre_f1": 0.8104
     },
     {
       "name": "dino_top25_a40",
-      "log": "logs/top25_a40_best_100772.out",
-      "train_log_best_mean_f1": 0.8177,
-      "final_report_mean_f1": 0.819
+      "log": "logs/meta_rescue_106566.out",
+      "mean_f1": 0.8190,
+      "artist_f1": 0.9197,
+      "style_f1": 0.7288,
+      "genre_f1": 0.8085
+    },
+    {
+      "name": "eva02_probe",
+      "log": "logs/meta_rescue_106566.out",
+      "mean_f1": 0.7877,
+      "artist_f1": 0.8609,
+      "style_f1": 0.7059,
+      "genre_f1": 0.7964
+    },
+    {
+      "name": "clip_h_probe",
+      "log": "logs/meta_rescue_106566.out",
+      "mean_f1": 0.7074,
+      "artist_f1": 0.7236,
+      "style_f1": 0.6347,
+      "genre_f1": 0.7639
     }
   ],
   "report_files": [
+    "reports/top25_meta_rescue_report.json",
+    "reports/top25_meta_rescue_models.pkl",
     "reports/top25_meta_ensemble_report.json",
     "reports/top25_meta_models.pkl"
   ]
 }
+
